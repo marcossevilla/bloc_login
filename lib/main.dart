@@ -1,22 +1,15 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
-void main() => runApp(MyApp());
+import 'package:user_repository/user_repository.dart';
+import 'package:authentication_repository/authentication_repository.dart';
 
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Material App',
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Material App Bar'),
-        ),
-        body: Center(
-          child: Container(
-            child: Text('Hello World'),
-          ),
-        ),
-      ),
-    );
-  }
+import 'app.dart';
+
+void main() {
+  runApp(
+    App(
+      userRepository: UserRepository(),
+      authenticationRepository: AuthenticationRepository(),
+    ),
+  );
 }
